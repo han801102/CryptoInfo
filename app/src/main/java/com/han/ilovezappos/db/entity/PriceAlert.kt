@@ -5,10 +5,10 @@ import androidx.room.Entity
 import androidx.room.PrimaryKey
 
 @Entity(tableName = "price_alert")
-data class PriceAlert (
+data class PriceAlert(
     @PrimaryKey(autoGenerate = true)
     val id: Int,
 
     @ColumnInfo(name = "price")
-    val price: Int
+    val price: Double
 )

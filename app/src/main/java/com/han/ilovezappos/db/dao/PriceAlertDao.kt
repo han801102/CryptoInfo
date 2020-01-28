@@ -13,6 +13,9 @@ interface PriceAlertDao {
     @Query("SELECT * FROM price_alert")
     fun getAllPriceAlert(): LiveData<List<PriceAlert>>
 
+    @Query("SELECT * FROM price_alert")
+    fun getAllPriceAlertSync(): List<PriceAlert>
+
     @Insert
     suspend fun insert(vararg priceAlert: PriceAlert)
 

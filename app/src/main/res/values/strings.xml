@@ -10,4 +10,6 @@
     <string name="input_price_alert">Create price alert</string>
     <string name="added_alert">Added Alert</string>
     <string name="price_alert">$%d</string>
+    <string name="channel_name">Alert</string>
+    <string name="channel_desc">Price alert</string>
 </resources>

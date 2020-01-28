@@ -7,6 +7,10 @@ import androidx.navigation.findNavController
 import androidx.navigation.ui.AppBarConfiguration
 import androidx.navigation.ui.setupActionBarWithNavController
 import androidx.navigation.ui.setupWithNavController
+import androidx.work.PeriodicWorkRequestBuilder
+import androidx.work.WorkManager
+import com.han.ilovezappos.worker.PriceAlertWorker
+import java.util.concurrent.TimeUnit
 
 class MainActivity : AppCompatActivity() {
 
@@ -27,5 +31,8 @@ class MainActivity : AppCompatActivity() {
         )
         setupActionBarWithNavController(navController, appBarConfiguration)
         navView.setupWithNavController(navController)
+
+        val worker = PeriodicWorkRequestBuilder<PriceAlertWorker>(3, TimeUnit.MINUTES).build()
+        WorkManager.getInstance(applicationContext).enqueue(worker)
     }
 }

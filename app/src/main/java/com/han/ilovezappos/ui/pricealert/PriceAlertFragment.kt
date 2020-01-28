@@ -14,11 +14,10 @@ import androidx.lifecycle.Observer
 import com.han.ilovezappos.R
 import com.han.ilovezappos.db.entity.PriceAlert
 import com.han.ilovezappos.ui.common.DynamicAdapter
-import kotlinx.android.synthetic.main.fragment_order_book.*
 import kotlinx.android.synthetic.main.fragment_order_book.recycler_view
 import kotlinx.android.synthetic.main.fragment_price_alert.*
 
-class PriceAlertFragment : Fragment(){
+class PriceAlertFragment : Fragment() {
 
     companion object {
         fun newInstance() = PriceAlertFragment()
@@ -68,7 +67,7 @@ class PriceAlertFragment : Fragment(){
     private fun initRecyclerView() {
         recycler_view.adapter = adapter
     }
-    
+
     private fun initInputEditText() {
         price_input_layout.error = "You need to enter a number"
         price_input_layout.isErrorEnabled = false
@@ -76,7 +75,7 @@ class PriceAlertFragment : Fragment(){
             when {
                 !isInputValid(v.text) -> price_input_layout.isErrorEnabled = true
                 actionId == EditorInfo.IME_ACTION_DONE -> {
-                    viewModel.insert(PriceAlert(0, v.text.toString().toInt()))
+                    viewModel.insert(PriceAlert(0, v.text.toString().toDouble()))
                     v.clearFocus()
                 }
             }
