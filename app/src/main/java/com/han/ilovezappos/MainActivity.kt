@@ -32,7 +32,7 @@ class MainActivity : AppCompatActivity() {
         setupActionBarWithNavController(navController, appBarConfiguration)
         navView.setupWithNavController(navController)
 
-        val worker = PeriodicWorkRequestBuilder<PriceAlertWorker>(3, TimeUnit.MINUTES).build()
+        val worker = PeriodicWorkRequestBuilder<PriceAlertWorker>(1, TimeUnit.HOURS).build()
         WorkManager.getInstance(applicationContext).enqueue(worker)
     }
 }
