@@ -12,10 +12,10 @@
         tools:layout="@layout/fragment_transaction_history" />
 
     <fragment
-        android:id="@+id/navigation_dashboard"
-        android:name="com.han.ilovezappos.ui.dashboard.DashboardFragment"
-        android:label="@string/title_dashboard"
-        tools:layout="@layout/fragment_dashboard" />
+        android:id="@+id/navigation_order_book"
+        android:name="com.han.ilovezappos.ui.orderbook.OrderBookFragment"
+        android:label="@string/title_order_book"
+        tools:layout="@layout/fragment_order_book" />
 
     <fragment
         android:id="@+id/navigation_notifications"
