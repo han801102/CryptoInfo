@@ -3,7 +3,11 @@
     <string name="title_notifications">Notifications</string>
     <string name="title_transaction">Transaction</string>
     <string name="title_order_book">Order Book</string>
+    <string name="title_price_alert">Price Alert</string>
     <string name="order_price">%s BTC @ %s USD</string>
     <string name="order_asks">Asks</string>
     <string name="order_bids">Bids</string>
+    <string name="input_price_alert">Create price alert</string>
+    <string name="added_alert">Added Alert</string>
+    <string name="price_alert">$%d</string>
 </resources>

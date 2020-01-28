@@ -22,7 +22,7 @@ class MainActivity : AppCompatActivity() {
             setOf(
                 R.id.navigation_transaction,
                 R.id.navigation_order_book,
-                R.id.navigation_notifications
+                R.id.navigation_price_alert
             )
         )
         setupActionBarWithNavController(navController, appBarConfiguration)

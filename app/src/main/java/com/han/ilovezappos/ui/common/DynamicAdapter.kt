@@ -4,8 +4,10 @@ package com.han.ilovezappos.ui.common
 import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
+import com.han.ilovezappos.db.entity.PriceAlert
 import com.han.ilovezappos.model.Order
 import com.han.ilovezappos.ui.common.viewholder.OrderViewHolder
+import com.han.ilovezappos.ui.common.viewholder.PriceAlertViewHolder
 import com.han.ilovezappos.ui.common.viewholder.TitleViewHolder
 
 /**
@@ -28,6 +30,8 @@ class DynamicAdapter() : RecyclerView.Adapter<RecyclerView.ViewHolder>() {
                 TitleViewHolder.newInstance(LayoutInflater.from(parent.context), parent)
             ViewType.ORDER ->
                 OrderViewHolder.newInstance(LayoutInflater.from(parent.context), parent)
+            ViewType.PRICE_ALERT ->
+                PriceAlertViewHolder.newInstance(LayoutInflater.from(parent.context), parent)
             else -> throw Exception("Not support view type")
         }
     }
@@ -45,6 +49,11 @@ class DynamicAdapter() : RecyclerView.Adapter<RecyclerView.ViewHolder>() {
                     holder.bindDate(it)
                 }
             }
+            is PriceAlertViewHolder -> {
+                (data[position] as? PriceAlert)?.let {
+                    holder.bindDate(it)
+                }
+            }
             else -> throw Exception("Not support view type")
         }
     }
@@ -53,6 +62,7 @@ class DynamicAdapter() : RecyclerView.Adapter<RecyclerView.ViewHolder>() {
         return when (data[position]) {
             is String -> ViewType.TITLE
             is Order -> ViewType.ORDER
+            is PriceAlert -> ViewType.PRICE_ALERT
             else -> super.getItemViewType(position)
         }
     }
@@ -62,6 +72,7 @@ class DynamicAdapter() : RecyclerView.Adapter<RecyclerView.ViewHolder>() {
     object ViewType {
         const val TITLE = 0
         const val ORDER = 1
+        const val PRICE_ALERT = 2
     }
 
     // TODO: Implement adapter item event
