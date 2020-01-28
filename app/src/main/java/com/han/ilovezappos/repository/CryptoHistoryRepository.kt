@@ -1,6 +1,5 @@
 package com.han.ilovezappos.repository
 
-import android.util.Log
 import androidx.lifecycle.MutableLiveData
 import com.han.ilovezappos.api.ApiClient
 import com.han.ilovezappos.api.CryptoPriceHistoryApi
@@ -29,7 +28,9 @@ class CryptoHistoryRepository {
                 call: Call<List<CryptoHistoryResponse>>,
                 response: Response<List<CryptoHistoryResponse>>
             ) {
-                priceHistory.value = response.body()?.map { Crypto(it.timestamp, it.price) }
+                val data = response.body()?.map { Crypto(it.timestamp, it.price) }
+                    ?.sortedBy { it.timestamp }
+                priceHistory.value = data?.distinctBy { it.timestamp }
             }
         })
 
