@@ -16,5 +16,8 @@
         app:layout_constraintRight_toRightOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
+    <include
+        android:id="@+id/view_loading"
+        layout="@layout/view_loading"/>
 
 </androidx.constraintlayout.widget.ConstraintLayout>

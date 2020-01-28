@@ -35,6 +35,7 @@ class OrderBookFragment : Fragment() {
 
         viewModel = ViewModelProviders.of(this).get(OrderBookViewModel::class.java)
         viewModel.orderBook.observe(viewLifecycleOwner, Observer {
+            view_loading.visibility = View.GONE
             adapter.data = it.asks
         })
     }

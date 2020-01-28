@@ -1,5 +1,6 @@
 package com.han.ilovezappos.ui.transaction
 
+import android.opengl.Visibility
 import androidx.lifecycle.ViewModelProviders
 import android.os.Bundle
 import androidx.fragment.app.Fragment
@@ -45,11 +46,10 @@ class TransactionHistoryFragment : Fragment() {
 
         viewModel = ViewModelProviders.of(this).get(TransactionHistoryViewModel::class.java)
         viewModel.cryptoPrices.observe(viewLifecycleOwner, Observer {
+            view_loading.visibility = View.GONE
             setChartData(it)
             view_chart.animateX(1500)
             view_chart.invalidate()
-
-
         })
     }
 
