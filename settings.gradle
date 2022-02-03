@@ -1,2 +1,2 @@
 include ':app'
-rootProject.name='ILoveZappos'
+rootProject.name='CryptoInfo'

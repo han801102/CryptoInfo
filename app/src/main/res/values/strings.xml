@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">ILoveZappos</string>
+    <string name="app_name">CryptoInfo</string>
     <string name="title_notifications">Notifications</string>
     <string name="title_transaction">Transaction</string>
     <string name="title_order_book">Order Book</string>

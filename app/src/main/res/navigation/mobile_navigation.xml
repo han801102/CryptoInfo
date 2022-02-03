@@ -7,19 +7,19 @@
 
     <fragment
         android:id="@+id/navigation_transaction"
-        android:name="com.han.ilovezappos.ui.transaction.TransactionHistoryFragment"
+        android:name="com.han.cryptoinfo.ui.transaction.TransactionHistoryFragment"
         android:label="@string/title_transaction"
         tools:layout="@layout/fragment_transaction_history" />
 
     <fragment
         android:id="@+id/navigation_order_book"
-        android:name="com.han.ilovezappos.ui.orderbook.OrderBookFragment"
+        android:name="com.han.cryptoinfo.ui.orderbook.OrderBookFragment"
         android:label="@string/title_order_book"
         tools:layout="@layout/fragment_order_book" />
 
     <fragment
         android:id="@+id/navigation_price_alert"
-        android:name="com.han.ilovezappos.ui.pricealert.PriceAlertFragment"
+        android:name="com.han.cryptoinfo.ui.pricealert.PriceAlertFragment"
         android:label="@string/title_price_alert"
         tools:layout="@layout/fragment_price_alert" />
 </navigation>
